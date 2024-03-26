@@ -1,6 +1,19 @@
 import readlinesync = require('readline-sync');
+import { Conta } from './src/model/Conta';
 
 let opcao: number;
+
+let c1: Conta = new Conta(1, 123, 1, "Jhulieny", 1000);
+//c1.visualizar();
+// Modificando saldo
+//c1.set_saldo(2000);
+//Recuperando saldo
+//console.log(c1.get_saldo());
+
+c1.sacar(5);
+c1.visualizar();
+c1.depositar(5000);
+c1.visualizar();
 
     console.log("*****************************************************");
     console.log("                                                     ");
