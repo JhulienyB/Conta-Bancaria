@@ -21,7 +21,6 @@ export class Conta{
 	public get numero(): number {
 		return this._numero;
 	}
-
     /**
      * Getter agencia
      * @return {number}
@@ -29,7 +28,6 @@ export class Conta{
 	public get agencia(): number {
 		return this._agencia;
 	}
-
     /**
      * Getter tipo
      * @return {number}
@@ -37,7 +35,6 @@ export class Conta{
 	public get tipo(): number {
 		return this._tipo;
 	}
-
     /**
      * Getter titular
      * @return {string}
@@ -45,12 +42,11 @@ export class Conta{
 	public get titular(): string {
 		return this._titular;
 	}
-
     /**
      * Getter saldo
      * @return {number}
      */
-	public get_saldo(): number {
+	public get saldo(): number {
 		return this._saldo;
 	}
 
@@ -61,7 +57,6 @@ export class Conta{
 	public set numero(value: number) {
 		this._numero = value;
 	}
-
     /**
      * Setter agencia
      * @param {number} value
@@ -69,7 +64,6 @@ export class Conta{
 	public set agencia(value: number) {
 		this._agencia = value;
 	}
-
     /**
      * Setter tipo
      * @param {number} value
@@ -77,7 +71,6 @@ export class Conta{
 	public set tipo(value: number) {
 		this._tipo = value;
 	}
-
     /**
      * Setter titular
      * @param {string} value
@@ -85,33 +78,32 @@ export class Conta{
 	public set titular(value: string) {
 		this._titular = value;
 	}
-
     /**
      * Setter saldo
      * @param {number} value
      */
-	public set_saldo(value: number) {
+	public set saldo(value: number) {
 		this._saldo = value;
 	}
 
+    //Método Sacar
     public sacar(valor: number): boolean{
         if(this._saldo >= valor){
-            this.set_saldo(this._saldo - valor);
+            this._saldo = this._saldo - valor;
             return true;
         }
-
         console.log("Saldo é insuficiente!");
         return false;
     }
 
+    //Método Depositar
     public depositar(valor: number): void{
-        this.set_saldo(this._saldo + valor);
+        this.saldo = this._saldo + valor;
     }
 
     public visualizar(): void{
-
+        //Dando nome ao tipo 1 e 2 das contas
         let tipo: string = "";
-
         switch(this._tipo){
             case 1:
                 tipo = "Conta Corrente";
