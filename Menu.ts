@@ -3,10 +3,16 @@ import { colors } from './src/util/Cores';
 import { Conta } from './src/model/Conta';
 import { ContaCorrente } from './src/model/ContaCorrente';
 import { ContaPoupanca } from './src/model/ContaPoupanca';
+import { ContaController } from './src/controller/ContaController';
 
 export function main() {
 
     let opcao: number;
+
+    let contas: ContaController = new ContaController();
+
+    let cc1: ContaCorrente = new ContaCorrente(2, 456, 1, "Yasmin", 5000, 1000);
+    contas.cadastrar(cc1);
 
     //Teste criando conta
     //let c1: Conta = new Conta(1, 123, 1, "Jhulieny", 1000);
@@ -23,16 +29,16 @@ export function main() {
         //c1.visualizar();
 
     //Testando Classe ContaCorrente, Vendo Heranças e Sobrescrever Métodos
-        const cc1: ContaCorrente = new ContaCorrente(2, 456, 1, "Yasmin", 5000, 1000);
-        cc1.visualizar();
-        cc1.sacar(1000);
-        cc1.visualizar();
-        cc1.depositar(5000);
-        cc1.visualizar();
+        // const cc1: ContaCorrente = new ContaCorrente(2, 456, 1, "Yasmin", 5000, 1000);
+        // cc1.visualizar();
+        // cc1.sacar(1000);
+        // cc1.visualizar();
+        // cc1.depositar(5000);
+        // cc1.visualizar();
 
     //Tentando Classe ContaPoupanca
-        const cp1: ContaPoupanca = new ContaPoupanca(7, 412, 2, "Carlos", 4000, 10);
-        cp1.visualizar();
+        // const cp1: ContaPoupanca = new ContaPoupanca(7, 412, 2, "Carlos", 4000, 10);
+        // cp1.visualizar();
 
     // ---Menu Código---
     while (true) {
@@ -76,6 +82,8 @@ export function main() {
             case 2:
                 console.log(colors.fg.whitestrong, 
                     "\n\nListar todas as Contas\n\n", colors.reset);
+                
+                    contas.listarTodas();
                 break;
             case 3:
                 console.log(colors.fg.whitestrong, 
