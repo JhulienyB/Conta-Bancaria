@@ -13,8 +13,8 @@ export function main() {
 
     let contas: ContaController = new ContaController();
 
-    let cc1: ContaCorrente = new ContaCorrente(contas.gerarNumero(), 456, 1, "Yasmin", 5000, 1000);
-    contas.cadastrar(cc1);
+    //let cc1: ContaCorrente = new ContaCorrente(contas.gerarNumero(), 456, 1, "Yasmin", 5000, 1000);
+    //contas.cadastrar(cc1);
 
     //Teste criando conta
     //let c1: Conta = new Conta(1, 123, 1, "Jhulieny", 1000);
