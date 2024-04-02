@@ -92,7 +92,7 @@ export abstract class Conta{
             this._saldo = this._saldo - valor;
             return true;
         }
-        console.log("Saldo é insuficiente!");
+        console.log("Saldo é insuficiente!\n");
         return false;
     }
 
